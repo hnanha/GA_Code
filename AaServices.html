@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Content Boxes In HTML</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+</head>
+<style>
+	/* Buttons */
+	#b1 {
+      border: none;
+      background-color: beige;
+      padding: 8px 12px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      color: black;
+      margin: 12px 16px;
+      cursor: pointer;
+      align-items: center;
+    }
+	#b2 {
+      background-color: white;
+      color: black;
+      border: 1px;
+      border-style: solid;
+      border-color: black;
+      float: right;
+      margin: 8px 12px;
+    }
+    #b3 {
+      background-color: rgb(47, 47, 255);
+      color: white;
+      float: right;
+      margin: 8px 12px;
+      border: none;
+    }
+	/* ----- */
+	nav {
+      background-color: beige;
+      border: 2px;
+      border-color: rgb(245, 245, 209);
+      border-style: groove;
+    }
+	header{
+		text-align: center;
+		font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-size: 85px;
+		/* position: relative;
+		top:10px; */
+		color: white;
+		text-shadow: #000;
+	}
+	b{
+		text-align: center;
+		font-family: sans-serif;
+		font-size: 22px;
+		position: relative;
+		left: 470px;
+		top: 58px;
+	}
+	section{
+		margin: 0; 
+		padding: 0;
+		font-family: sans-serif;
+	}
+	.container{
+		position: relative;
+		width: 1200px;
+		height: 300px;
+		margin: 240px auto;
+	}
+	.container .box{
+		position: relative;
+		width: calc(400px - 30px); 
+		height: calc(300px - 30px); 
+		background: #000;
+		float: left;
+		margin: 15px;
+		box-sizing: border-box;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+	.container .box .icon{
+		position: absolute;
+		top: 0;
+		Left: 0;
+		width: 100%;
+		height: 100%;
+		background: #f00;
+		transition: .5s;
+		z-index: 1;
+	}
+	.container .box:hover .icon{
+		top: 20px;
+		Left: calc(50% - 40px); 
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+	}
+	.container .box .icon .fa{
+		position: absolute;
+		top: 50%; 
+		Left: 50%;
+		transform: translate(-50%, -50%); 
+		font-size: 80px;
+		transition: 0.5s;
+		color: black;
+	}
+	.container .box:hover .icon .fa{
+		font-size: 40px;
+	}
+	.container .box .content{
+		position: absolute;
+		top: 100%;
+		height: calc(100% - 100px);
+		text-align: center;
+		padding: 20px;
+		box-sizing: border-box;
+		transition: 0.5s;
+		opacity: 0;
+	}
+	.container .box:hover .content{
+		top: 100px;
+		opacity: 1;
+	}
+	.container .box .content h3{ 
+		margin: 0 0 10px; 
+		padding: 0; 
+		color: black; 
+		font-size: 24px;
+	}
+	.container .box .content p{
+		margin: 0;
+		padding: 0;
+		color: black;
+	}
+	.container .box:nth-child(1) .icon{
+		background: pink;
+	}
+	.container .box:nth-child(1){
+		background: beige;
+	}
+	footer{
+		background-color: beige;
+		border: 2px;
+		border-color: rgb(245, 245, 209);
+		border-style: groove;
+		text-align: center;
+	}
+	#cool{
+		background-image: url(servicepg.jpg);
+		background-size:cover;
+		background-position: center;
+	}
+	desc{
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	article{
+		display: flex;
+	    border-color: lightgrey;
+	    border-style: solid;
+	    border-width: 2px;
+	    border-radius: 40px;
+	    font-size: 25px;
+	    height: 250px;	
+	}
+	h1{
+		border-color: lightgrey;
+	    border-style: solid;
+	    border-width: 2px;
+	    border-radius: 25px;
+		text-align: center;
+	}
+
+</style>
+<body>
+	<section>
+		<nav>
+			<a href="index.html"><button id="b1" onclick= a href="index.html">Home</button></a>
+			<a href="AaServices.html"><button id="b1" onclick= a href="AaServices.html">Services</button></a>
+			<a href="AboutUs.html"><button id="b1" onclick= a href="AboutUs.html">About Us</button></a>
+			<a href="#"><button id="b1" onclick= a href="#">Contact</button></a>
+			<a href="AaLogIn.html"><button id="b2" onclick= a href="AaLogIn.html">Log in</button></a>
+			<a href="AaSignUp.html"><button id="b3" onclick= a href="AaSignUp.html">Sign Up</button></a>
+		</nav>
+		<div id="cool">
+			<header>Services Offered</header>
+		</div>
+		<article>
+			<div class="desc">
+				<b>Here we offer 3 kinds of financial <br> management services. Whether for <br> 
+					personal or business!</b>
+			</div>
+		</article>
+		
+		
+
+		
+		<div class="container">
+			<div class="box">
+				<div class="icon"><i class="fa fa-info" aria-hidden="true"></i></div> 
+				<div class="content">
+					<h3>Investment Advisory</h3>
+					<p>For individuals and businesses looking to grow their current assets.</p>
+				</div>
+			</div>
+		<div class="container">
+			<div class="box">
+				<div class="icon"><i class="fa fa-search" aria-hidden="true"></i></div> 
+				<div class="content">
+					<h3>Asset Management</h3>
+					<p>For startups, growing businesses and SMEs.</p>
+				</div>
+			</div>
+		<div class="container">
+			<div class="box">
+				<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div> 
+				<div class="content">
+					<h3>Financial Planning</h3>
+					<p>Help to set and achieve beneficial financial goals whether for business or personal.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<h1>
+		Click <a href="AaServiceInfo.html">here</a> to find out more!
+	</h1>
+
+</body>
+<footer>
+	<p>For any inquiries contact us <a href="#"> here!</p>
+</footer>
+</html>
